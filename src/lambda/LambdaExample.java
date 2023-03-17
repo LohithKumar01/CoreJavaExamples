@@ -29,7 +29,6 @@ public class LambdaExample {
         for (Employee employee:employees){
             System.out.println(employee.getEmployeeName());
         }
-        
     }
 
 }
