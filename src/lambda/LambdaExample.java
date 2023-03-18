@@ -2,7 +2,6 @@ package lambda;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Function;
 
 public class LambdaExample {
     public static void main(String[] args) {
@@ -17,36 +16,38 @@ public class LambdaExample {
         Employee paul=new Employee("Paul Rudd",32);
         Employee cassie=new Employee("Cassie Ruth",23);
 
-        List<Employee>employees=new ArrayList<>();
-        employees.add(joe);
-        employees.add(john);
-        employees.add(tim);
-        employees.add(robert);
-        employees.add(chris);
-        employees.add(paul);
-        employees.add(cassie);
+        List<Employee>employeeList=new ArrayList<>();
+        employeeList.add(joe);
+        employeeList.add(john);
+        employeeList.add(tim);
+        employeeList.add(robert);
+        employeeList.add(chris);
+        employeeList.add(paul);
+        employeeList.add(cassie);
 
-        Function<Employee,String>upperCase= employee -> employee.getEmployeeName().toUpperCase();
-        Function<String,String>firstName=name->name.substring(0,name.indexOf(' '));
-        Function chainedFunction=upperCase.andThen(firstName);
-        System.out.println(chainedFunction.apply(employees.get(0)));
-        System.out.println("------------------");
+        employeeList.stream().map(employee -> {employee.setAge(employee.getAge()+5); return  employee;}).forEach(emp -> System.out.println(emp));
 
-        System.out.println("Employees over 25");
-        System.out.println("------------------");
-        employees.forEach(employee -> {
-            if (employee.getAge()>25){
-                System.out.println(employee.getEmployeeName()+" "+employee.getAge());
-            }
-        });
+//        Function<Employee,String>upperCase= employee -> employee.getEmployeeName().toUpperCase();
+//        Function<String,String>firstName=name->name.substring(0,name.indexOf(' '));
+//        Function chainedFunction=upperCase.andThen(firstName);
+//        System.out.println(chainedFunction.apply(employeeList.get(0)));
+//        System.out.println("------------------");
 
-//        Collections.sort(employees, new Comparator<Employee>() {
+//        System.out.println("Employees over 25");
+//        System.out.println("------------------");
+//        employeeList.forEach(employee -> {
+//            if (employee.getAge()>25){
+//                System.out.println(employee.getEmployeeName()+" "+employee.getAge());
+//            }
+//        });
+
+//        Collections.sort(employeeList, new Comparator<Employee>() {
 //            @Override
 //            public int compare(Employee o1, Employee o2) {
 //                return 0;
 //            }
 //        });
-//        for (Employee employee:employees) {
+//        for (Employee employee:employeeList) {
 //            if (employee.getAge() > 25) {
 //                System.out.println(employee.getEmployeeName()+" "+employee.getAge());
 //            }
@@ -77,5 +78,13 @@ class Employee{
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "employeeName='" + employeeName + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
