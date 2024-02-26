@@ -25,7 +25,6 @@ public class HighestWordCount{
             }
         }
         System.out.println(elementsMap);
-
         for(Map.Entry<String, Integer> entry : elementsMap.entrySet()){             //Map.Entry is used mostly for count related tasks.
             if (entry.getValue() > maxWordCount){
                 maxRepeatedWord=entry.getKey();
