@@ -30,7 +30,7 @@ public class StreamExamples {
                         .collect(Collectors.groupingBy(s -> s.charAt(0)));
 
         int sum = numberList.stream()
-                        .reduce(0, Integer::sum);
+                        .reduce(0, Integer::sum);           //reduce is used for sum
 
         System.out.println(evenNumbers);
         System.out.println(numberList.stream().count());
