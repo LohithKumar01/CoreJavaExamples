@@ -2,10 +2,10 @@ package basics.controlstatements;
 
 public class SwitchNumberExample {
     public static void main(String[] args) {
-        int number = 4;
+        int number = 5;
         switch (number){
             case 1:
-                System.out.println("1");        //if we didnt use break all the statements will be printed by input val
+                System.out.println("1");        //if we didn't use break, All the statements will be printed by input val
             case 2:
                 System.out.println("2");
             case 3:

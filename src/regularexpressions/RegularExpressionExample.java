@@ -9,6 +9,5 @@ public class RegularExpressionExample {
         String regEx="I want a (bike|ball).";
         System.out.println(challenge1.matches(regEx));
         System.out.println(challenge2.matches(regEx));
-
     }
 }

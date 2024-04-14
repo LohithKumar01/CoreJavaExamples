@@ -14,8 +14,8 @@ public class IfExample {
             System.out.println("Implements Logical OR");
         }
         else{
-            System.out.println("Implemented Successfully!");
+            System.out.println("Not Implemented!");
         }
-
+        System.out.println("Implemented Successfully!");
     }
 }
